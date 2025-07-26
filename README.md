@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Laksh Pradhwani</h1>
 <h3 align="center">🚀 AI Enthusiast | 💻 Tech-Savvy Developer | 🐍 Python & ☕ Java Coder</h3>
 
-- 🛠️ Tech Stack **t**
+- 🛠️ Tech Stack ****
 
 - 🌱 I’m currently learning **About AI Tools**
 
