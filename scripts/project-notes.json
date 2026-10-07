@@ -1,0 +1,11 @@
+{
+  "Aura-PA": "Adaptive University and Routine Assistant that plans around a student's day.",
+  "Portfolio-V2": "Modular developer portfolio with reusable components, custom hooks, parallax and scroll motion.",
+  "Profiley-Resume-Builder": "Reactive resume builder with real-time WYSIWYG editing and 10+ templates.",
+  "mercatora": "Mall management system with a secure admin dashboard for shops and listings.",
+  "Helios-Music-Player": "Lightweight music player with smooth audio controls and an animated, responsive UI.",
+  "Vaultara-GovDoc": "Privacy-first gov-tech platform to securely store, manage and share citizen documents.",
+  "stranger-things": "Cinematic fan site with GSAP parallax, a Hawkins Lab archive and a theory board.",
+  "ai-era-infographic": "Interactive page on how an AI thinks, with a live code editor to generate, edit and run code.",
+  "mp3-downloader": "Desktop playlist downloader: fetches a YouTube Music playlist's metadata and saves each track as a high-quality MP3."
+}

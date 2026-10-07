@@ -8,6 +8,7 @@ import json
 import math
 import os
 import random
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -240,35 +241,105 @@ def tech():
     return doc(1200, 20 + len(rows) * 46, body, label="Technologies")
 
 
-# ---------------------------------------------------------------------------- project cards
-CARDS = [
-    ("PROFILEY", "Resume builder", ["Reactive resume builder with real-time", "WYSIWYG editing and 10+ templates."], ["React 19", "Vite", "Tailwind"]),
-    ("HELIOS", "Music player", ["Lightweight player with smooth audio", "controls and an animated, responsive UI."], ["HTML", "CSS", "JavaScript"]),
-    ("PORTFOLIO V2", "Developer site", ["Modular portfolio with reusable components,", "custom hooks, parallax and scroll motion."], ["React", "Vite", "Tailwind"]),
-    ("MERCATORA", "Management system", ["Mall management system with a secure", "admin dashboard for shops and listings."], ["Vanilla JS", "Vite", "Firebase"]),
-    ("VAULTARA", "Gov-tech", ["Privacy-first platform to securely store,", "manage and share citizen documents."], ["Firebase", "HTML", "Security"]),
-    ("AURA-PA", "AI assistant", ["Adaptive University and Routine Assistant", "that plans around a student's day."], ["TypeScript", "AI"]),
-    ("STRANGER THINGS S5", "Fan experience", ["Cinematic fan site with GSAP parallax, a", "Hawkins Lab archive and a theory board."], ["GSAP", "Tailwind", "HTML"]),
-    ("AI ERA INFOGRAPHIC", "Interactive page", ["Explore how an AI thinks, with a live code", "editor to generate, edit and run code."], ["JavaScript", "Ace editor"]),
-]
-REPOS = ["Profiley-Resume-Builder", "Helios-Music-Player", "Portfolio-V2", "mercatora", "Vaultara-GovDoc", "Aura-PA", "stranger-things", "ai-era-infographic"]
+# ---------------------------------------------------------------------------- project cards (live from GitHub)
+NOTES = json.load(open(os.path.join(os.path.dirname(__file__), "project-notes.json"), encoding="utf-8"))
 
 
-def card(i):
-    title, kind, desc, tech_ = CARDS[i]
+def clean(text):
+    t = re.sub(r"[^\x20-\x7E]", " ", text or "")
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def first_sentence(t, limit=130):
+    cut = t.find(". ")
+    if 0 < cut < limit:
+        return t[:cut + 1]
+    return t[:limit].rstrip(" ,;") + ("..." if len(t) > limit else "")
+
+
+def wrap2(t, width=60):
+    lines, cur = [], ""
+    words = t.split()
+    for i, w in enumerate(words):
+        if len(cur) + len(w) + (1 if cur else 0) <= width:
+            cur = (cur + " " + w).strip()
+        else:
+            lines.append(cur)
+            cur = w
+            if len(lines) == 2:
+                break
+    if len(lines) < 2 and cur:
+        lines.append(cur)
+    used = len(" ".join(lines).split())
+    if used < len(words):
+        lines[-1] = lines[-1][:width - 3].rstrip(" ,;.") + "..."
+    return (lines + ["", ""])[:2]
+
+
+def ago(iso):
+    d = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(iso.replace("Z", "+00:00"))).days
+    if d < 1:
+        return "today"
+    if d < 2:
+        return "yesterday"
+    if d < 45:
+        return f"{d}d ago"
+    if d < 700:
+        return f"{round(d / 30)}mo ago"
+    return f"{round(d / 365)}y ago"
+
+
+def describe(r):
+    host = re.sub(r"^https?://|/$", "", r["homepageUrl"] or "")
+    return NOTES.get(r["name"]) or first_sentence(clean(r["description"])) or (f"Live at {host}" if host else "")
+
+
+def pick_projects(nodes, login):
+    out = []
+    for r in nodes:
+        if r["name"].lower() == login.lower() or r["isArchived"] or r["isFork"]:
+            continue
+        if not describe(r):
+            continue
+        out.append(r)
+    return out[:8]
+
+
+def card(i, r):
+    title = r["name"].replace("-", " ").replace("_", " ").upper()
+    title = title if len(title) <= 24 else title[:23] + "."
+    lines = wrap2(describe(r))
+    kind = (r.get("primaryLanguage") or {}).get("name") or "REPO"
+    topics = [t["topic"]["name"] for t in r["repositoryTopics"]["nodes"]]
+    tags = topics[:3] or [e["node"]["name"] for e in r["languages"]["edges"]][:3]
     W, H = 580, 176
     chips, x = "", 24
-    for c in tech_:
+    for c in tags:
         w = M.width(c.upper(), 11, 1.2) + 22
         chips += f'<rect x="{x + .5}" y="129.5" width="{w:.0f}" height="26" rx="4" fill="none" stroke="{LINE}"/>' + txt(M, c.upper(), 11, x + w / 2, 146, GREY, 1.2, "m")[0]
         x += w + 8
-    n_, _ = txt(M, f"{i + 1:02d}", 13, 556, 34, DIM, 1, "r")
+    star = f'<path d="M0 -6l1.8 3.9 4.2.5-3.1 2.9.8 4.2L0 3.4l-3.7 2.1.8-4.2L-6 -1.6l4.2-.5z" fill="none" stroke="{GREY}" stroke-width="1.2" stroke-linejoin="round"/>'
+    meta = txt(M, f'{r["stargazerCount"]}', 12, 552, 146, GREY, 0, "r")[0]
+    mw = M.width(str(r["stargazerCount"]), 12)
+    meta += f'<g transform="translate({552 - mw - 12:.0f} 142)">{star}</g>' + txt(M, f'UPDATED {ago(r["pushedAt"]).upper()}', 10, 552 - mw - 26, 146, DIM, 1, "r")[0]
     body = (
         f'<g style="animation:rise .6s ease-out {i * .08:.2f}s both">{box(0, 0, W, H)}'
-        + txt(M, kind.upper(), 11, 24, 36, DIM, 2)[0] + txt(MB, title, 22, 24, 72, WHITE, 0)[0]
-        + txt(M, desc[0], 13, 24, 98, GREY)[0] + txt(M, desc[1], 13, 24, 118, GREY)[0] + chips + n_ + '</g>'
+        + txt(M, kind.upper(), 11, 24, 36, DIM, 2)[0] + txt(M, f"{i + 1:02d}", 13, 556, 34, DIM, 1, "r")[0]
+        + txt(MB, title, 22, 24, 72, WHITE, 0)[0] + txt(M, lines[0], 13, 24, 98, GREY)[0] + txt(M, lines[1], 13, 24, 118, GREY)[0]
+        + chips + meta + "</g>"
     )
-    return doc(W, H, body, label=title)
+    return doc(W, H, body, label=title), title
+
+
+def write_readme_block(projects):
+    path = os.path.join(os.path.dirname(__file__), "..", "README.md")
+    text = open(path, encoding="utf-8").read()
+    links = "\n".join(
+        f'<a href="{r["url"]}"><img src="assets/mono/card-{i + 1:02d}.svg" alt="{re.sub(chr(34), "", r["name"])}: {re.sub(chr(34), "", describe(r))}" width="49%"></a>'
+        for i, r in enumerate(projects))
+    new = re.sub(r"(<!-- projects:start -->).*?(<!-- projects:end -->)", lambda m: f"{m.group(1)}\n{links}\n{m.group(2)}", text, flags=re.S)
+    if new != text:
+        open(path, "w", encoding="utf-8").write(new)
 
 
 # ---------------------------------------------------------------------------- terminal-style lists
@@ -331,6 +402,7 @@ def footer():
 # ---------------------------------------------------------------------------- live stats
 QUERY = """query($login:String!){user(login:$login){
   repositories(ownerAffiliations:OWNER,privacy:PUBLIC,isFork:false,first:100){totalCount nodes{stargazerCount languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name}}}}}
+  projects: repositories(first:40,ownerAffiliations:OWNER,privacy:PUBLIC,isFork:false,orderBy:{field:PUSHED_AT,direction:DESC}){nodes{name description url homepageUrl stargazerCount pushedAt isArchived isFork primaryLanguage{name} languages(first:3,orderBy:{field:SIZE,direction:DESC}){edges{node{name}}} repositoryTopics(first:3){nodes{topic{name}}}}}
   repositoriesContributedTo(first:1,includeUserRepositories:false,contributionTypes:[COMMIT,PULL_REQUEST,ISSUE,REPOSITORY]){totalCount}
   contributionsCollection{totalCommitContributions totalPullRequestContributions totalIssueContributions
     contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}"""
@@ -446,7 +518,11 @@ def stats(login="TheRealLaksh"):
                   f'<rect x="28" y="{y + 8}" width="{max(424 * pct / 100, 3):.1f}" height="5" rx="2.5" fill="{WHITE}" style="transform-box:fill-box;transform-origin:0 50%;animation:grow .9s ease-out {i * .1:.1f}s both"/>')
     css2 = "@keyframes growy{from{transform:scaleY(0)}to{transform:scaleY(1)}}"
     save("activity.svg", doc(1200, 300, f'<g>{chart}</g><g transform="translate(720 0)">{langs}</g>', css=css2, label="Contributions by month and top languages"))
-    print("stats built", cur, best)
+    projects = pick_projects(u["projects"]["nodes"], login)
+    for i, r in enumerate(projects):
+        save(f"card-{i + 1:02d}.svg", card(i, r)[0])
+    write_readme_block(projects)
+    print("stats built", cur, best, [r["name"] for r in projects])
 
 
 # ---------------------------------------------------------------------------- run
@@ -460,8 +536,6 @@ def main():
         save(name + ".svg", heading(icon, title))
     save("about-art.svg", about_art())
     save("tech.svg", tech())
-    for i in range(len(CARDS)):
-        save(f"card-{i + 1:02d}.svg", card(i))
     save("journey.svg", journey())
     save("footer.svg", footer())
     print("mono assets built")
