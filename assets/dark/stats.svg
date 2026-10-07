@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 132" width="1200" height="132" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" role="img"><style>
+.fb{transform-box:fill-box;transform-origin:center}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes wobble{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+@keyframes twinkle{0%,100%{transform:scale(.3);opacity:.25}50%{transform:scale(1);opacity:1}}
+@keyframes flame{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.6)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes ring{0%{transform:scale(.7);opacity:.7}100%{transform:scale(1.45);opacity:0}}
+@keyframes dart{0%{transform:translate(34px,-34px);opacity:0}14%{transform:translate(0,0);opacity:1}86%{transform:translate(0,0);opacity:1}100%{transform:translate(0,0);opacity:0}}
+@keyframes typeline{0%{transform:scaleX(0)}30%,88%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-16px)}}
+@keyframes shadow{0%,100%{transform:scale(1);opacity:.28}45%{transform:scale(.6);opacity:.12}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-18px)}}
+@keyframes drawline{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes sweep{0%{transform:translateX(-140%)}60%,100%{transform:translateX(260%)}}
+@keyframes spinslow{to{transform:rotate(360deg)}}
+@keyframes wave{to{transform:translateX(-600px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><defs><filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#0B1B3A" flood-opacity=".22"/></filter></defs><g transform="translate(8 0)"><g transform="translate(0 0)" style="animation:rise .7s ease-out 0.0s both"><rect x="1" y="1" width="272" height="128" rx="24" fill="#121A2E" stroke="#25304D" stroke-width="1.5"/><rect x="24" y="26" width="36" height="6" rx="3" fill="#6C8CFF"/><text x="24" y="86" font-size="54" font-weight="800" fill="#E8EEFF" letter-spacing="-2">541</text><text x="24" y="112" font-size="14.5" fill="#8FA0C4">Contributions in the last year</text></g><g transform="translate(296 0)" style="animation:rise .7s ease-out 0.12s both"><rect x="1" y="1" width="272" height="128" rx="24" fill="#121A2E" stroke="#25304D" stroke-width="1.5"/><rect x="24" y="26" width="36" height="6" rx="3" fill="#FF8F5C"/><text x="24" y="86" font-size="54" font-weight="800" fill="#E8EEFF" letter-spacing="-2">42</text><text x="24" y="112" font-size="14.5" fill="#8FA0C4">Days with activity</text></g><g transform="translate(592 0)" style="animation:rise .7s ease-out 0.24s both"><rect x="1" y="1" width="272" height="128" rx="24" fill="#121A2E" stroke="#25304D" stroke-width="1.5"/><rect x="24" y="26" width="36" height="6" rx="3" fill="#3DD6AE"/><text x="24" y="86" font-size="54" font-weight="800" fill="#E8EEFF" letter-spacing="-2">65</text><text x="24" y="112" font-size="14.5" fill="#8FA0C4">Busiest day, contributions</text></g><g transform="translate(888 0)" style="animation:rise .7s ease-out 0.36s both"><rect x="1" y="1" width="272" height="128" rx="24" fill="#121A2E" stroke="#25304D" stroke-width="1.5"/><rect x="24" y="26" width="36" height="6" rx="3" fill="#A99BFF"/><text x="24" y="86" font-size="54" font-weight="800" fill="#E8EEFF" letter-spacing="-2">20</text><text x="24" y="112" font-size="14.5" fill="#8FA0C4">Public repositories</text></g></g></svg>
