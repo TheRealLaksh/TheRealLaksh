@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 64" width="196" height="64" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" role="img"><style>
+.fb{transform-box:fill-box;transform-origin:center}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes wobble{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+@keyframes twinkle{0%,100%{transform:scale(.3);opacity:.25}50%{transform:scale(1);opacity:1}}
+@keyframes flame{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.6)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes ring{0%{transform:scale(.7);opacity:.7}100%{transform:scale(1.45);opacity:0}}
+@keyframes dart{0%{transform:translate(34px,-34px);opacity:0}14%{transform:translate(0,0);opacity:1}86%{transform:translate(0,0);opacity:1}100%{transform:translate(0,0);opacity:0}}
+@keyframes typeline{0%{transform:scaleX(0)}30%,88%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-16px)}}
+@keyframes shadow{0%,100%{transform:scale(1);opacity:.28}45%{transform:scale(.6);opacity:.12}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-18px)}}
+@keyframes drawline{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes sweep{0%{transform:translateX(-140%)}60%,100%{transform:translateX(260%)}}
+@keyframes spinslow{to{transform:rotate(360deg)}}
+@keyframes wave{to{transform:translateX(-600px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><defs><filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#0B1B3A" flood-opacity=".22"/></filter><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF9F43"/><stop offset=".5" stop-color="#FF4D8D"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs><g class="fb float" style="animation:float 4s ease-in-out 1s infinite;"><rect x="3" y="3" width="190" height="50" rx="25" fill="url(#ig)" filter="url(#sh)"/><rect x="22" y="14" width="28" height="28" rx="9" fill="none" stroke="#fff" stroke-width="3"/><circle cx="36" cy="28" r="6.5" fill="none" stroke="#fff" stroke-width="3"/><circle cx="43.5" cy="20.5" r="2" fill="#fff"/><text x="68" y="35" font-size="20" font-weight="700" fill="#fff">Instagram</text></g></svg>
