@@ -1,24 +1,60 @@
-# 💫 About Me:
-Aspiring AI/ML Engineer with hands-on experience in full-stack development, particularly within the MERN ecosystem. I’ve worked across multiple internships, building practical, production-ready solutions and contributing to open-source initiatives. My background includes strong performance in national-level tech competitions and leadership roles that strengthen my problem-solving and collaboration skills. I’m actively expanding my expertise in machine learning and always exploring opportunities to work on impactful, innovation-driven projects.
+<div align="center">
 
+<img src="assets/mono/hero.svg" alt="Welcome to Laksh's GitHub" width="100%">
 
-## 🌐 Socials:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/_.lakshp) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Laksh-Pradhwani) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:laksh.pradhwani@gmail.com) 
+<a href="https://linkedin.com/in/laksh-pradhwani"><img src="assets/mono/badge-linkedin.svg" alt="LinkedIn" height="38"></a>
+<a href="mailto:laksh.pradhwani@gmail.com"><img src="assets/mono/badge-email.svg" alt="Email" height="38"></a>
+<a href="https://instagram.com/_.lakshp"><img src="assets/mono/badge-instagram.svg" alt="Instagram" height="38"></a>
+<!-- website badge: add lakshpradhwani.com here once the domain is live -->
 
-# 💻 Tech Stack:
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![WebGL](https://img.shields.io/badge/WebGL-990000?logo=webgl&logoColor=white&style=for-the-badge) ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![Xbox](https://img.shields.io/badge/xbox-%23107C10.svg?style=for-the-badge&logo=xbox&logoColor=white) ![Unreal Engine](https://img.shields.io/badge/unrealengine-%23313131.svg?style=for-the-badge&logo=unrealengine&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=TheRealLaksh&theme=highcontrast&hide_border=false&include_all_commits=true&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=TheRealLaksh&theme=highcontrast&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=TheRealLaksh&theme=highcontrast&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+<img src="assets/mono/h-about.svg" alt="About me" width="100%">
 
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=gruvbox)
+</div>
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=TheRealLaksh&limit=5&theme=chartreuse-dark&combine_all_yearly_contributions=true)
+<img align="right" src="assets/mono/about-art.svg" alt="Wireframe globe" width="300">
 
----
-[![](https://visitcount.itsvg.in/api?id=TheRealLaksh&icon=5&color=8)](https://visitcount.itsvg.in)
+Hello there! I'm **Laksh Pradhwani**, a full-stack developer. I like building complete products, from the database all the way to the pixel, and I'm learning machine learning to steer towards AI engineering. These days I'm the tech head at ShiftsDeal and a first-year at Masters' Union.
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+<div align="center">
+
+**Studying UG Data Science & AI at Masters' Union**<br>
+**Tech head at ShiftsDeal**<br>
+**National-level 10 m air pistol shooter**<br>
+**Shipping with React, Next.js, Node and Python**
+
+</div>
+
+<br clear="right">
+
+<div align="center">
+
+<img src="assets/mono/h-tech.svg" alt="Technologies" width="100%">
+
+<img src="assets/mono/tech.svg" alt="Technologies: HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, Python, Django, PostgreSQL, Firebase, Git and more" width="100%">
+
+<img src="assets/mono/h-work.svg" alt="Projects" width="100%">
+
+<a href="https://github.com/TheRealLaksh/Profiley-Resume-Builder"><img src="assets/mono/card-01.svg" alt="Profiley, a reactive resume builder" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Helios-Music-Player"><img src="assets/mono/card-02.svg" alt="Helios, a music player" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Portfolio-V2"><img src="assets/mono/card-03.svg" alt="Portfolio V2, a developer portfolio" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/mercatora"><img src="assets/mono/card-04.svg" alt="Mercatora, a mall management system" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Vaultara-GovDoc"><img src="assets/mono/card-05.svg" alt="Vaultara, a privacy-first gov-tech platform" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Aura-PA"><img src="assets/mono/card-06.svg" alt="Aura-PA, an adaptive university assistant" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/stranger-things"><img src="assets/mono/card-07.svg" alt="Stranger Things S5 fan experience" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/ai-era-infographic"><img src="assets/mono/card-08.svg" alt="AI Era interactive infographic" width="49%"></a>
+
+<img src="assets/mono/h-path.svg" alt="Journey" width="100%">
+
+<img src="assets/mono/journey.svg" alt="Journey: Hotel Kavana, IIT Madras, MoreYeahs, Unified Mentor, ShiftsDeal, Masters' Union" width="100%">
+
+<img src="assets/mono/h-stats.svg" alt="Statistics" width="100%">
+
+<img src="assets/mono/stats.svg" alt="GitHub stats and streaks" width="100%">
+
+<br>
+
+<img src="assets/mono/activity.svg" alt="Contributions by month for the last 12 months and top languages" width="100%">
+
+<img src="assets/mono/footer.svg" alt="Thanks for stopping by" width="100%">
+
+</div>
