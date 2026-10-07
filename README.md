@@ -34,14 +34,16 @@ Hello there! I'm **Laksh Pradhwani**, a full-stack developer. I like building co
 
 <img src="assets/mono/h-work.svg" alt="Projects" width="100%">
 
-<a href="https://github.com/TheRealLaksh/Profiley-Resume-Builder"><img src="assets/mono/card-01.svg" alt="Profiley, a reactive resume builder" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/Helios-Music-Player"><img src="assets/mono/card-02.svg" alt="Helios, a music player" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/Portfolio-V2"><img src="assets/mono/card-03.svg" alt="Portfolio V2, a developer portfolio" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/mercatora"><img src="assets/mono/card-04.svg" alt="Mercatora, a mall management system" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/Vaultara-GovDoc"><img src="assets/mono/card-05.svg" alt="Vaultara, a privacy-first gov-tech platform" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/Aura-PA"><img src="assets/mono/card-06.svg" alt="Aura-PA, an adaptive university assistant" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/stranger-things"><img src="assets/mono/card-07.svg" alt="Stranger Things S5 fan experience" width="49%"></a>
-<a href="https://github.com/TheRealLaksh/ai-era-infographic"><img src="assets/mono/card-08.svg" alt="AI Era interactive infographic" width="49%"></a>
+<!-- projects:start -->
+<a href="https://github.com/TheRealLaksh/Aura-PA"><img src="assets/mono/card-01.svg" alt="Aura-PA: Adaptive University and Routine Assistant that plans around a student's day." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Portfolio-V2"><img src="assets/mono/card-02.svg" alt="Portfolio-V2: Modular developer portfolio with reusable components, custom hooks, parallax and scroll motion." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/arun-medicals"><img src="assets/mono/card-03.svg" alt="arun-medicals: Live at arun-medicals.vercel.app" width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Profiley-Resume-Builder"><img src="assets/mono/card-04.svg" alt="Profiley-Resume-Builder: Reactive resume builder with real-time WYSIWYG editing and 10+ templates." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/mp3-downloader"><img src="assets/mono/card-05.svg" alt="mp3-downloader: Desktop playlist downloader: fetches a YouTube Music playlist's metadata and saves each track as a high-quality MP3." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/mercatora"><img src="assets/mono/card-06.svg" alt="mercatora: Mall management system with a secure admin dashboard for shops and listings." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Helios-Music-Player"><img src="assets/mono/card-07.svg" alt="Helios-Music-Player: Lightweight music player with smooth audio controls and an animated, responsive UI." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Vaultara-GovDoc"><img src="assets/mono/card-08.svg" alt="Vaultara-GovDoc: Privacy-first gov-tech platform to securely store, manage and share citizen documents." width="49%"></a>
+<!-- projects:end -->
 
 <img src="assets/mono/h-path.svg" alt="Journey" width="100%">
 
