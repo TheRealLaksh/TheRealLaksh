@@ -1,68 +1,24 @@
-<div align="center">
+# 💫 About Me:
+Aspiring AI/ML Engineer with hands-on experience in full-stack development, particularly within the MERN ecosystem. I’ve worked across multiple internships, building practical, production-ready solutions and contributing to open-source initiatives. My background includes strong performance in national-level tech competitions and leadership roles that strengthen my problem-solving and collaboration skills. I’m actively expanding my expertise in machine learning and always exploring opportunities to work on impactful, innovation-driven projects.
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner.svg"><img src="assets/light/banner.svg" alt="Laksh Pradhwani, full-stack developer and aspiring AI/ML engineer" width="100%"></picture>
 
-<br>
+## 🌐 Socials:
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/_.lakshp) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Laksh-Pradhwani) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:laksh.pradhwani@gmail.com) 
 
-<a href="https://linkedin.com/in/laksh-pradhwani"><img src="assets/shared/pill-linkedin.svg" alt="LinkedIn" height="48"></a>
-<a href="mailto:laksh.pradhwani@gmail.com"><img src="assets/shared/pill-email.svg" alt="Email" height="48"></a>
-<a href="https://instagram.com/_.lakshp"><img src="assets/shared/pill-instagram.svg" alt="Instagram" height="48"></a>
-<!-- website pill: add lakshpradhwani.com here once the domain is live -->
+# 💻 Tech Stack:
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![WebGL](https://img.shields.io/badge/WebGL-990000?logo=webgl&logoColor=white&style=for-the-badge) ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![Xbox](https://img.shields.io/badge/xbox-%23107C10.svg?style=for-the-badge&logo=xbox&logoColor=white) ![Unreal Engine](https://img.shields.io/badge/unrealengine-%23313131.svg?style=for-the-badge&logo=unrealengine&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=TheRealLaksh&theme=highcontrast&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=TheRealLaksh&theme=highcontrast&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=TheRealLaksh&theme=highcontrast&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h01.svg"><img src="assets/light/h01.svg" alt="About" width="100%"></picture>
+### ✍️ Random Dev Quote
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=gruvbox)
 
-<img src="assets/shared/board.svg" alt="Sticker board: full-stack, AI/ML, Varanasi, building at ShiftsDeal, 10 m air pistol" width="100%">
+### 🔝 Top Contributed Repo
+![](https://github-contributor-stats.vercel.app/api?username=TheRealLaksh&limit=5&theme=chartreuse-dark&combine_all_yearly_contributions=true)
 
-<p align="center"><sub>&nbsp;</sub></p>
+---
+[![](https://visitcount.itsvg.in/api?id=TheRealLaksh&icon=5&color=8)](https://visitcount.itsvg.in)
 
-I'm Laksh, 18, from Varanasi. I build full-stack products and I'm growing into AI/ML engineering.<br>
-These days I'm the tech head at <b>ShiftsDeal</b> and a first-year at <b>Masters' Union</b> studying Data Science and AI.<br>
-Outside code, I'm a national-level 10 m air pistol shooter. Shooting taught me to stay calm under pressure,<br>
-and I bring the same focus to a codebase.
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h02.svg"><img src="assets/light/h02.svg" alt="Right now" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/now.svg"><img src="assets/light/now.svg" alt="Right now: tech head at ShiftsDeal, UG Data Science and AI at Masters' Union, freelance web builds" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h03.svg"><img src="assets/light/h03.svg" alt="Toolbox" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stack.svg"><img src="assets/light/stack.svg" alt="Toolbox: HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, Python, Django, PostgreSQL, Firebase and more" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h04.svg"><img src="assets/light/h04.svg" alt="Selected work" width="100%"></picture>
-
-<a href="https://github.com/TheRealLaksh/Profiley-Resume-Builder"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-profiley.svg"><img src="assets/light/card-profiley.svg" alt="Profiley, a reactive resume builder" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/Helios-Music-Player"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-helios.svg"><img src="assets/light/card-helios.svg" alt="Helios, a music player" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/Portfolio-V2"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-portfolio.svg"><img src="assets/light/card-portfolio.svg" alt="Portfolio V2, a developer portfolio" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/mercatora"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-mercatora.svg"><img src="assets/light/card-mercatora.svg" alt="Mercatora, a mall management system" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/Vaultara-GovDoc"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-vaultara.svg"><img src="assets/light/card-vaultara.svg" alt="Vaultara, a privacy-first gov-tech platform" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/Aura-PA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-aura.svg"><img src="assets/light/card-aura.svg" alt="Aura-PA, an adaptive university assistant" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/stranger-things"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-stranger.svg"><img src="assets/light/card-stranger.svg" alt="Stranger Things S5 fan experience" width="49%"></picture></a>
-<a href="https://github.com/TheRealLaksh/ai-era-infographic"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/card-infographic.svg"><img src="assets/light/card-infographic.svg" alt="AI Era interactive infographic" width="49%"></picture></a>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h05.svg"><img src="assets/light/h05.svg" alt="The path so far" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/timeline.svg"><img src="assets/light/timeline.svg" alt="Timeline: Hotel Kavana, IIT Madras, MoreYeahs, Unified Mentor, ShiftsDeal, Masters' Union" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h06.svg"><img src="assets/light/h06.svg" alt="Wins" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/wins.svg"><img src="assets/light/wins.svg" alt="Wins: All-India Rank 54 in shooting, VVM regional winner, Web Wizards 2nd place, Top 100 nationally" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h07.svg"><img src="assets/light/h07.svg" alt="By the numbers" width="100%"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stats.svg"><img src="assets/light/stats.svg" alt="GitHub numbers" width="100%"></picture>
-
-<br>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/heatmap.svg"><img src="assets/light/heatmap.svg" alt="Contribution heatmap for the last year" width="100%"></picture>
-
-<br>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/langs.svg"><img src="assets/light/langs.svg" alt="Languages across public repositories" width="100%"></picture>
-
-<br>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/footer.svg"><img src="assets/light/footer.svg" alt="Let's build something good" width="100%"></picture>
-
-<sub>Cards in "By the numbers" refresh twice a day from the GitHub API. Public repositories only.</sub>
-
-</div>
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
