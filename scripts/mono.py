@@ -243,6 +243,7 @@ def tech():
 
 # ---------------------------------------------------------------------------- project cards (live from GitHub)
 NOTES = json.load(open(os.path.join(os.path.dirname(__file__), "project-notes.json"), encoding="utf-8"))
+EXCLUDE = {n.lower() for n in json.load(open(os.path.join(os.path.dirname(__file__), "project-exclude.json"), encoding="utf-8"))}
 
 
 def clean(text):
@@ -297,7 +298,7 @@ def describe(r):
 def pick_projects(nodes, login):
     out = []
     for r in nodes:
-        if r["name"].lower() == login.lower() or r["isArchived"] or r["isFork"]:
+        if r["name"].lower() == login.lower() or r["name"].lower() in EXCLUDE or r["isArchived"] or r["isFork"]:
             continue
         if not describe(r):
             continue
