@@ -187,7 +187,7 @@ def heading(icon, title):
 
 
 # ---------------------------------------------------------------------------- about art: a quiet wireframe globe
-def about_art(size=400):
+def about_art(size=400, wrap=True):
     cx = cy = size / 2
     R, tau, frames = 118, math.radians(20), 60
     rnd = random.Random(6)
@@ -237,7 +237,32 @@ def about_art(size=400):
             f'<path d="{lat_b}" fill="none" stroke="#fff" stroke-opacity=".1"/><path d="{lat_f}" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.1"/>'
             f'<path fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.1">{anim_d(mer)}</path>'
             f'<path fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round">{anim_d(dots)}</path>')
-    return doc(size, size, body, label="Wireframe globe")
+    return doc(size, size, body, label="Wireframe globe") if wrap else body
+
+
+def about():
+    """Typed paragraph in a terminal card, with the globe beside it. One image, balanced height."""
+    H, GW = 290, 290
+    text = ("Hello there! I'm Laksh Pradhwani, a full-stack developer. I like building complete products, from the database "
+            "all the way to the pixel, and I'm learning machine learning to steer towards AI engineering.")
+    lines, cur = [], ""
+    for w in text.split():
+        if len(cur) + len(w) + 1 <= 62:
+            cur = (cur + " " + w).strip()
+        else:
+            lines.append(cur)
+            cur = w
+    lines.append(cur)
+    prompt, _ = reveal(M, "laksh@github:~$ ", 15, 28, 44, GREY, .1, .02, .3)
+    cmd, end = reveal(MB, "cat about.txt", 15, 28 + M.width("laksh@github:~$ ", 15), 44, WHITE, .5, .045, .3)
+    body = box(0, 0, 880, H) + runner(880, H, 8, 1, 14, .4) + f'<rect x="1" y="62" width="878" height="1.5" fill="{LINE}"/>' + prompt + cmd
+    body += f'<rect x="{end + 4:.1f}" y="31" width="8.5" height="17" fill="{WHITE}" opacity="0" style="animation:blink 1.1s steps(1) 1.3s infinite"/>'
+    for i, ln in enumerate(lines):
+        t, _ = reveal(M, ln, 17, 28, 108 + i * 34, SOFT if i else WHITE, 1.3 + i * .5, .018, .35)
+        body += t
+    body += txt(M, "# ready to build something together?", 14, 28, 108 + len(lines) * 34 + 22, DIM)[0]
+    body = f'<g>{body}</g><g transform="translate(900 0) scale({GW / 400})">{about_art(400, wrap=False)}</g>'
+    return doc(1200, H, body, label="About Laksh Pradhwani")
 
 
 # ---------------------------------------------------------------------------- tech badges
@@ -572,6 +597,7 @@ def main():
                               ("stats", "Statistics", "h-stats"), ("connect", "Let's connect", "h-connect")]:
         save(name + ".svg", heading(icon, title))
     save("about-art.svg", about_art())
+    save("about.svg", about())
     save("tech.svg", tech())
     save("journey.svg", journey())
     save("footer.svg", footer())
