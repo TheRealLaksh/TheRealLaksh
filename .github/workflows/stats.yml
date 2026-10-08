@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["scripts/mono.py", "scripts/typo.py", "scripts/project-notes.json", "scripts/project-exclude.json", ".github/workflows/stats.yml"]
+    paths: ["scripts/mono.py", "scripts/typo.py", "scripts/project-notes.json", "scripts/project-list.json", ".github/workflows/stats.yml"]
 
 permissions:
   contents: write

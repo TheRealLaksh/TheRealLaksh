@@ -31,6 +31,15 @@ CSS = (
     "@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}"
     "@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}"
     "@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}"
+    "@keyframes runner{from{stroke-dashoffset:0}to{stroke-dashoffset:-1}}"
+    "@keyframes sweep{0%{transform:translateX(-220px)}60%,100%{transform:translateX(1320px)}}"
+    "@keyframes hline{0%{transform:translateX(0)}60%,100%{transform:translateX(1010px)}}"
+    "@keyframes iconpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}"
+    "@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}"
+    "@keyframes sway{0%,100%{transform:translateX(-12px)}50%{transform:translateX(12px)}}"
+    "@keyframes shoot1{0%{transform:translate(1040px,40px);opacity:0}1%{opacity:1}8%{transform:translate(720px,150px);opacity:0}100%{opacity:0}}"
+    "@keyframes shoot2{0%{transform:translate(520px,20px);opacity:0}1%{opacity:1}7%{transform:translate(260px,110px);opacity:0}100%{opacity:0}}"
+    "@keyframes scanrows{from{transform:translateY(0)}to{transform:translateY(var(--d))}}"
 )
 
 
@@ -47,6 +56,16 @@ def save(name, content):
 
 def box(x, y, w, h, r=8, fill=CARD, stroke=LINE):
     return f'<rect x="{x + .75}" y="{y + .75}" width="{w - 1.5}" height="{h - 1.5}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.5"/>'
+
+
+HL = ('<linearGradient id="hl"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/>'
+      '<stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
+
+
+def runner(w, h, r=8, delay=0, dur=9, op=.5):
+    """A short light that travels around a card's border."""
+    return (f'<rect x=".75" y=".75" width="{w - 1.5}" height="{h - 1.5}" rx="{r}" fill="none" stroke="#fff" stroke-opacity="{op}" stroke-width="1.5" '
+            f'pathLength="1" stroke-dasharray=".12 .88" style="animation:runner {dur}s linear {delay}s infinite"/>')
 
 
 # ---------------------------------------------------------------------------- hero
@@ -102,6 +121,12 @@ def hero():
     cw = M.width("M", size)
     x = (W - len(word) * cw) / 2
     clip, t, cur = typed("h", MB, x, 140, word, .8, .07, size, WHITE, WHITE, LOOP, keep_cursor=True)
+    roles = ["full-stack developer", "learning AI / ML", "tech head at ShiftsDeal", "10 m air pistol shooter"]
+    role_svg = "".join(
+        f'<g opacity="0">{txt(M, "> " + role, 20, 600, 196, SOFT, 1.5, "m")[0]}'
+        f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.06;.22;.28;1" dur="12s" begin="{4.8 + 3 * k}s" repeatCount="indefinite"/>'
+        f'<animateTransform attributeName="transform" type="translate" values="0 8;0 0;0 0;0 -8;0 -8" keyTimes="0;.06;.22;.28;1" dur="12s" begin="{4.8 + 3 * k}s" repeatCount="indefinite"/></g>'
+        for k, role in enumerate(roles))
     defs = (
         '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050506"/><stop offset=".4" stop-color="#202023"/><stop offset=".62" stop-color="#6c6c72"/><stop offset=".72" stop-color="#b6b6bb"/><stop offset="1" stop-color="#8a8a90"/></linearGradient>'
         '<linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#8d8d92"/></linearGradient>'
@@ -116,11 +141,14 @@ def hero():
     body = (
         f'<animate id="loop" attributeName="opacity" from="1" to="1" dur="{LOOP}s" begin="0s;loop.end"/>'
         '<g clip-path="url(#card)"><rect width="1200" height="400" fill="url(#sky)"/>'
-        f'{stars}<path d="{smooth(far)}L1240 400H-40Z" fill="url(#far)"/><path d="{smooth(mid)}L1240 400H-40Z" fill="url(#mid)"/>'
+        f'{stars}<g style="animation:shoot1 17s linear 3s infinite"><line x1="0" y1="0" x2="-64" y2="-23" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g>'
+        f'<g style="animation:shoot2 23s linear 11s infinite"><line x1="0" y1="0" x2="-52" y2="-19" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></g>'
+        f'<g style="animation:sway 24s ease-in-out infinite"><path d="{smooth(far)}L1240 400H-40Z" fill="url(#far)"/></g>'
+        f'<g style="animation:sway 17s ease-in-out -6s infinite reverse"><path d="{smooth(mid)}L1240 400H-40Z" fill="url(#mid)"/></g>'
         f'<path d="{ground}" fill="#0a0a0b"/><path d="{river}" fill="url(#riv)"/><path d="{river}" fill="url(#glowriv)"/>{shimmer}'
         f'<path d="{mound_l}" fill="#030304"/><path d="{mound_r}" fill="#030304"/>'
         f'<g filter="url(#blur)">{mist}</g>'
-        f'{t}{cur}'
+        f'{t}{cur}{role_svg}'
         '<rect width="1200" height="400" fill="url(#vig)"/><rect width="1200" height="400" filter="url(#grain)" opacity=".45"/></g>'
         f'<rect x=".75" y=".75" width="1198.5" height="398.5" rx="7.5" fill="none" stroke="{LINE}" stroke-width="1.5"/>'
     )
@@ -131,7 +159,7 @@ def hero():
 def badge(label, icon=None, mono=None, w=176):
     t, tw_ = txt(MB, label, 12, 44, 24, WHITE, 1.6)
     ic = (f'<g transform="translate(15 10) scale(.75)"><path d="{ICONS[icon]}" fill="{WHITE}"/></g>' if icon else txt(MB, mono, 15, 24, 25, WHITE, 0, "m")[0])
-    return doc(w, 38, box(0, 0, w, 38, 5) + ic + t, label=label)
+    return doc(w, 38, box(0, 0, w, 38, 5) + runner(w, 38, 5, delay=len(label) * .4, dur=6) + f'<g style="transform-origin:24px 19px;animation:iconpulse 3.4s ease-in-out infinite">{ic}</g>' + t, label=label)
 
 
 # ---------------------------------------------------------------------------- headings
@@ -151,9 +179,11 @@ def heading(icon, title):
     tw_ = MB.width(title, 26, 0)
     x0 = 600 - (tw_ + 36) / 2
     t, _ = txt(MB, title, 26, x0 + 36, 48, WHITE, 0)
-    body = (f'<g style="animation:fade .8s ease both"><g transform="translate({x0:.1f} 26)" fill="none" stroke="{WHITE}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICO[icon]}</g>{t}'
-            f'<rect x="40" y="70" width="1120" height="1.5" fill="{LINE}" style="transform-origin:600px 0;animation:grow 1s ease-out both"/></g>')
-    return doc(W, H, body, label=title)
+    body = (f'<g style="animation:fade .8s ease both"><g style="transform-origin:{x0 + 11:.1f}px 37px;animation:iconpulse 3.2s ease-in-out infinite">'
+            f'<g transform="translate({x0:.1f} 26)" fill="none" stroke="{WHITE}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICO[icon]}</g></g>{t}'
+            f'<rect x="40" y="70" width="1120" height="1.5" fill="{LINE}" style="transform-origin:600px 0;animation:grow 1s ease-out both"/>'
+            f'<rect x="40" y="68.5" width="110" height="4" fill="url(#hl)" style="animation:hline 5.5s ease-in-out {len(title) * .35:.1f}s infinite"/></g>')
+    return doc(W, H, body, HL, label=title)
 
 
 # ---------------------------------------------------------------------------- about art: a quiet wireframe globe
@@ -238,12 +268,13 @@ def tech():
                      f'{box(0, 0, w, 38, 5)}<g transform="translate(14 10) scale(.75)"><path d="{ICONS[s]}" fill="{WHITE}"/></g>{t}</g></g>')
             x += w + 10
             n += 1
-    return doc(1200, 20 + len(rows) * 46, body, label="Technologies")
+    body += f'<g style="animation:sweep 7s ease-in-out 1.5s infinite"><rect x="0" y="0" width="150" height="{20 + len(rows) * 46}" fill="url(#hl)" opacity=".1" transform="skewX(-18)"/></g>'
+    return doc(1200, 20 + len(rows) * 46, body, HL, label="Technologies")
 
 
 # ---------------------------------------------------------------------------- project cards (live from GitHub)
 NOTES = json.load(open(os.path.join(os.path.dirname(__file__), "project-notes.json"), encoding="utf-8"))
-EXCLUDE = {n.lower() for n in json.load(open(os.path.join(os.path.dirname(__file__), "project-exclude.json"), encoding="utf-8"))}
+LIST = json.load(open(os.path.join(os.path.dirname(__file__), "project-list.json"), encoding="utf-8"))
 
 
 def clean(text):
@@ -296,14 +327,9 @@ def describe(r):
 
 
 def pick_projects(nodes, login):
-    out = []
-    for r in nodes:
-        if r["name"].lower() == login.lower() or r["name"].lower() in EXCLUDE or r["isArchived"] or r["isFork"]:
-            continue
-        if not describe(r):
-            continue
-        out.append(r)
-    return out[:8]
+    """The repos named in project-list.json, in that order. Their numbers are live from GitHub."""
+    by = {r["name"]: r for r in nodes}
+    return [by[n] for n in LIST if n in by and not by[n]["isArchived"]]
 
 
 def card(i, r):
@@ -324,7 +350,7 @@ def card(i, r):
     mw = M.width(str(r["stargazerCount"]), 12)
     meta += f'<g transform="translate({552 - mw - 12:.0f} 142)">{star}</g>' + txt(M, f'UPDATED {ago(r["pushedAt"]).upper()}', 10, 552 - mw - 26, 146, DIM, 1, "r")[0]
     body = (
-        f'<g style="animation:rise .6s ease-out {i * .08:.2f}s both">{box(0, 0, W, H)}'
+        f'<g style="animation:rise .6s ease-out {i * .08:.2f}s both">{box(0, 0, W, H)}{runner(W, H, 8, i * 1.4)}'
         + txt(M, kind.upper(), 11, 24, 36, DIM, 2)[0] + txt(M, f"{i + 1:02d}", 13, 556, 34, DIM, 1, "r")[0]
         + txt(MB, title, 22, 24, 72, WHITE, 0)[0] + txt(M, lines[0], 13, 24, 98, GREY)[0] + txt(M, lines[1], 13, 24, 118, GREY)[0]
         + chips + meta + "</g>"
@@ -336,7 +362,7 @@ def write_readme_block(projects):
     path = os.path.join(os.path.dirname(__file__), "..", "README.md")
     text = open(path, encoding="utf-8").read()
     links = "\n".join(
-        f'<a href="{r["url"]}"><img src="assets/mono/card-{i + 1:02d}.svg" alt="{re.sub(chr(34), "", r["name"])}: {re.sub(chr(34), "", describe(r))}" width="49%"></a>'
+        f'<a href="{r["url"]}" title="Open {r["name"]} on GitHub ({r["stargazerCount"]} stars)"><img src="assets/mono/card-{i + 1:02d}.svg" alt="{re.sub(chr(34), "", r["name"])}: {re.sub(chr(34), "", describe(r))}" width="49%"></a>'
         for i, r in enumerate(projects))
     new = re.sub(r"(<!-- projects:start -->).*?(<!-- projects:end -->)", lambda m: f"{m.group(1)}\n{links}\n{m.group(2)}", text, flags=re.S)
     if new != text:
@@ -349,7 +375,12 @@ def terminal(cmd, rows, row_h, col_x, extra_h=0, notes=None):
     H = 74 + len(rows) * row_h + extra_h + 18
     head, _ = reveal(M, "laksh@github:~$ ", 15, 28, 42, GREY, .1, .02, .3)
     cmd_t, end = reveal(MB, cmd, 15, 28 + M.width("laksh@github:~$ ", 15), 42, WHITE, .5, .045, .3)
-    body = box(0, 0, W, H) + f'<rect x="1" y="60" width="{W - 2}" height="1.5" fill="{LINE}"/>' + head + cmd_t
+    body = box(0, 0, W, H) + runner(W, H, 8, 1, 14, .4) + f'<rect x="1" y="60" width="{W - 2}" height="1.5" fill="{LINE}"/>' + head + cmd_t
+    body += f'<rect x="{end + 4:.1f}" y="29" width="8.5" height="17" fill="{WHITE}" opacity="0" style="animation:blink 1.1s steps(1) 1.3s infinite"/>'
+    n_rows = len(rows)
+    if n_rows > 1:
+        body += (f'<g style="animation:fade .4s ease 3s both"><rect x="2" y="62" width="{W - 4}" height="{row_h}" fill="#fff" opacity=".05" '
+                 f'style="--d:{(n_rows - 1) * row_h}px;animation:scanrows {n_rows * 1.7:.1f}s steps({n_rows - 1},end) infinite"/></g>')
     for i, row in enumerate(rows):
         y = 62 + (i + 1) * row_h - row_h * .36
         cells = ""
@@ -395,9 +426,13 @@ def wins():
 
 # ---------------------------------------------------------------------------- connect + footer
 def footer():
-    t, _ = reveal(M, "thanks for stopping by", 16, 600 - M.width("thanks for stopping by </>", 16) / 2, 52, GREY, .2, .04, .4)
-    code, _ = txt(MB, "</>", 16, 600 + M.width("thanks for stopping by ", 16) - M.width("thanks for stopping by </>", 16) / 2, 52, WHITE)
-    return doc(1200, 90, f'<rect x="40" y="14" width="1120" height="1.5" fill="{LINE}"/>{t}<g style="animation:fade 1s ease 1.2s both">{code}</g>', label="Thanks for stopping by")
+    LOOP, size = 12, 16
+    word = "thanks for stopping by </>"
+    x = 600 - len(word) * M.width("M", size) / 2
+    clip, t, cur = typed("f", M, x, 52, word, .6, .08, size, GREY, WHITE, LOOP, keep_cursor=True)
+    body = (f'<animate id="loop" attributeName="opacity" from="1" to="1" dur="{LOOP}s" begin="0s;loop.end"/>'
+            f'<rect x="40" y="14" width="1120" height="1.5" fill="{LINE}"/><rect x="40" y="12.5" width="110" height="4" fill="url(#hl)" style="animation:hline 6s ease-in-out infinite"/>{t}{cur}')
+    return doc(1200, 90, body, HL + clip, label="Thanks for stopping by")
 
 
 # ---------------------------------------------------------------------------- live stats
@@ -453,7 +488,8 @@ def stats(login="TheRealLaksh"):
     # left card
     rows = [("Total Stars Earned", stars), ("Total Commits (last year)", cc["totalCommitContributions"]), ("Total PRs", cc["totalPullRequestContributions"]),
             ("Total Issues", cc["totalIssueContributions"]), ("Contributed to (last year)", u["repositoriesContributedTo"]["totalCount"])]
-    left = box(0, 0, 590, 250) + txt(MB, f"{login}'s GitHub Stats", 18, 28, 44, WHITE)[0]
+    left = (box(0, 0, 590, 250) + runner(590, 250, 8, 0, 12, .45) + txt(MB, f"{login}'s GitHub Stats", 18, 28, 44, WHITE)[0]
+            + f'<circle cx="528" cy="39" r="3.4" fill="{WHITE}" style="animation:breathe 2s ease-in-out infinite"/>' + txt(M, "LIVE", 11, 558, 43, GREY, 2, "r")[0])
     for i, (k, v) in enumerate(rows):
         y = 84 + i * 33
         left += f'<rect x="28" y="{y - 9}" width="6" height="6" fill="{WHITE}"/>' + txt(M, k, 14, 46, y, SOFT)[0] + txt(MB, str(v), 14, 330, y, WHITE, 0, "r")[0]
@@ -465,12 +501,12 @@ def stats(login="TheRealLaksh"):
              f'style="--p:{frac:.3f};transform:rotate(-90deg);transform-origin:{ring_c[0]}px {ring_c[1]}px;animation:ringfill 1.6s ease-out both"/>'
              + txt(MB, str(active), 28, ring_c[0], ring_c[1] + 2, WHITE, 0, "m")[0] + txt(M, "ACTIVE DAYS", 9, ring_c[0], ring_c[1] + 22, GREY, 1, "m")[0])
     # right card
-    right = box(0, 0, 590, 250)
+    right = box(0, 0, 590, 250) + runner(590, 250, 8, 4, 12, .45)
     cols = [98, 295, 492]
     right += f'<rect x="197" y="46" width="1.5" height="158" fill="{LINE}"/><rect x="394" y="46" width="1.5" height="158" fill="{LINE}"/>'
     right += (txt(MB, f'{cal["totalContributions"]:,}', 38, cols[0], 126, WHITE, 0, "m")[0] + txt(M, "Total Contributions", 14, cols[0], 164, SOFT, 0, "m")[0]
               + txt(M, f"{first} - Present", 11.5, cols[0], 188, DIM, 0, "m")[0])
-    right += (f'<circle cx="{cols[1]}" cy="112" r="40" fill="none" stroke="{WHITE}" stroke-width="5" stroke-dasharray="190 70" transform="rotate(-232 {cols[1]} 112)" stroke-linecap="round"/>'
+    right += (f'<g style="transform-origin:{cols[1]}px 112px;animation:spin 18s linear infinite"><circle cx="{cols[1]}" cy="112" r="40" fill="none" stroke="{WHITE}" stroke-width="5" stroke-dasharray="190 70" transform="rotate(-232 {cols[1]} 112)" stroke-linecap="round"/></g>'
               + txt(MB, str(cur), 38, cols[1], 126, WHITE, 0, "m")[0] + txt(MB, "Current Streak", 14, cols[1], 182, WHITE, 0, "m")[0] + txt(M, cur_r, 11.5, cols[1], 204, DIM, 0, "m")[0])
     right += txt(MB, str(best), 38, cols[2], 126, WHITE, 0, "m")[0] + txt(M, "Longest Streak", 14, cols[2], 164, SOFT, 0, "m")[0] + txt(M, best_r, 11.5, cols[2], 188, DIM, 0, "m")[0]
     css = "@keyframes ringfill{from{stroke-dashoffset:1}to{stroke-dashoffset:calc(1 - var(--p))}}"
@@ -501,16 +537,16 @@ def stats(login="TheRealLaksh"):
         lab = dt.date.fromisoformat(m + "-01").strftime("%b").upper()
         hi = v == max(vals) and v > 0
         bars += (f'<g style="animation:fade .4s ease {i * .06:.2f}s both"><rect x="{cx - bw / 2:.1f}" y="{Y1 - h:.1f}" width="{bw:.1f}" height="{max(h, 1.5):.1f}" rx="3" fill="{WHITE if hi else "#8b949e"}" '
-                 f'style="transform-box:fill-box;transform-origin:50% 100%;animation:growy .7s ease-out {i * .06:.2f}s both"><title>{lab}: {v}</title></rect>'
+                 f'style="transform-box:fill-box;transform-origin:50% 100%;animation:growy .7s ease-out {i * .06:.2f}s both{", breathe 3s ease-in-out 1.5s infinite" if hi else ""}"><title>{lab}: {v}</title></rect>'
                  + (txt(MB, str(v), 12, cx, Y1 - h - 8, WHITE, 0, "m")[0] if v else "") + txt(M, lab, 11, cx, Y1 + 22, GREY, 0, "m")[0] + "</g>")
-    chart = box(0, 0, 700, 300) + txt(MB, "Contributions by month", 18, 28, 44, WHITE)[0] + txt(M, "last 12 months", 12, 672, 44, DIM, 0, "r")[0] + grid + bars
+    chart = box(0, 0, 700, 300) + runner(700, 300, 8, 2, 14, .4) + txt(MB, "Contributions by month", 18, 28, 44, WHITE)[0] + txt(M, "last 12 months", 12, 672, 44, DIM, 0, "r")[0] + grid + bars
     sizes = {}
     for r in u["repositories"]["nodes"]:
         for e in r["languages"]["edges"]:
             sizes[e["node"]["name"]] = sizes.get(e["node"]["name"], 0) + e["size"]
     topl = sorted(sizes.items(), key=lambda kv: -kv[1])[:6]
     tot = sum(sizes.values()) or 1
-    langs = box(0, 0, 480, 300) + txt(MB, "Top languages", 18, 28, 44, WHITE)[0] + txt(M, "public repos", 12, 452, 44, DIM, 0, "r")[0]
+    langs = box(0, 0, 480, 300) + runner(480, 300, 8, 6, 12, .4) + txt(MB, "Top languages", 18, 28, 44, WHITE)[0] + txt(M, "public repos", 12, 452, 44, DIM, 0, "r")[0]
     for i, (name, v) in enumerate(topl):
         y = 86 + i * 34
         pct = 100 * v / tot
