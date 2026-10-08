@@ -593,6 +593,7 @@ def main():
     save("badge-linkedin.svg", badge("LINKEDIN", None, "in"))
     save("badge-email.svg", badge("EMAIL", "gmail"))
     save("badge-instagram.svg", badge("INSTAGRAM", "instagram"))
+    save("badge-website.svg", badge("WEBSITE", None, "www"))
     for icon, title, name in [("about", "About me", "h-about"), ("tech", "Technologies", "h-tech"), ("work", "Projects", "h-work"), ("path", "Journey", "h-path"),
                               ("stats", "Statistics", "h-stats"), ("connect", "Let's connect", "h-connect")]:
         save(name + ".svg", heading(icon, title))
