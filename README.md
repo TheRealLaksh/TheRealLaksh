@@ -13,16 +13,9 @@
 
 <img align="right" src="assets/mono/about-art.svg" alt="Wireframe globe" width="300">
 
-Hello there! I'm **Laksh Pradhwani**, a full-stack developer. I like building complete products, from the database all the way to the pixel, and I'm learning machine learning to steer towards AI engineering. These days I'm the tech head at ShiftsDeal and a first-year at Masters' Union.
+Hello there! I'm **Laksh Pradhwani**, a full-stack developer. I like building complete products, from the database all the way to the pixel, and I'm learning machine learning to steer towards AI engineering. 
 
-<div align="center">
 
-**Studying UG Data Science & AI at Masters' Union**<br>
-**Tech head at ShiftsDeal**<br>
-**National-level 10 m air pistol shooter**<br>
-**Shipping with React, Next.js, Node and Python**
-
-</div>
 
 <br clear="right">
 
