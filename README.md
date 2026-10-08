@@ -11,13 +11,11 @@
 
 </div>
 
-<img align="right" src="assets/mono/about-art.svg" alt="Wireframe globe" width="300">
+<div align="center">
 
-Hello there! I'm **Laksh Pradhwani**, a full-stack developer. I like building complete products, from the database all the way to the pixel, and I'm learning machine learning to steer towards AI engineering. 
+<img src="assets/mono/about.svg" alt="About Laksh Pradhwani: a full-stack developer learning machine learning" width="100%">
 
-
-
-<br clear="right">
+</div>
 
 <div align="center">
 
