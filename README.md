@@ -5,7 +5,7 @@
 <a href="https://linkedin.com/in/laksh-pradhwani" title="Open LinkedIn"><img src="assets/mono/badge-linkedin.svg" alt="LinkedIn" height="38"></a>
 <a href="mailto:laksh.pradhwani@gmail.com" title="Send an email"><img src="assets/mono/badge-email.svg" alt="Email" height="38"></a>
 <a href="https://instagram.com/laksh.pradhwani" title="Open Instagram"><img src="assets/mono/badge-instagram.svg" alt="Instagram" height="38"></a>
-<!-- website badge: add lakshpradhwani.com here once the domain is live -->
+<a href="https://lakshpradhwani.com" title="Open my website"><img src="assets/mono/badge-website.svg" alt="Website" height="38"></a>
 
 <img src="assets/mono/h-about.svg" alt="About me" width="100%">
 
