@@ -32,6 +32,8 @@
 <a href="https://github.com/TheRealLaksh/mercatora" title="Open mercatora on GitHub (0 stars)"><img src="assets/mono/card-04.svg" alt="mercatora: Mall management system with a secure admin dashboard for shops and listings." width="49%"></a>
 <a href="https://github.com/TheRealLaksh/Helios-Music-Player" title="Open Helios-Music-Player on GitHub (1 stars)"><img src="assets/mono/card-05.svg" alt="Helios-Music-Player: Lightweight music player with smooth audio controls and an animated, responsive UI." width="49%"></a>
 <a href="https://github.com/TheRealLaksh/Vaultara-GovDoc" title="Open Vaultara-GovDoc on GitHub (0 stars)"><img src="assets/mono/card-06.svg" alt="Vaultara-GovDoc: Privacy-first gov-tech platform to securely store, manage and share citizen documents." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Callender-Events" title="Open Callender-Events on GitHub (1 stars)"><img src="assets/mono/card-07.svg" alt="Callender-Events: CaliBridge: event calendar with month switching, local sync and a responsive animated UI." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/stranger-things" title="Open stranger-things on GitHub (1 stars)"><img src="assets/mono/card-08.svg" alt="stranger-things: Cinematic fan site with GSAP parallax, a Hawkins Lab archive and a theory board." width="49%"></a>
 <!-- projects:end -->
 
 <img src="assets/mono/h-path.svg" alt="Journey" width="100%">
