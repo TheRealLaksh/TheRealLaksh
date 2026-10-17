@@ -429,14 +429,13 @@ def journey():
         [("2025.08", (M, 14, DIM)), ("MoreYeahs", (MB, 18, WHITE)), ("Web developer. Built GigX, a Django gig-economy platform.", (M, 13.5, GREY))],
         [("2025.10", (M, 14, DIM)), ("Unified Mentor", (MB, 18, WHITE)), ("Full-stack developer. Four production apps shipped.", (M, 13.5, GREY))],
         [("2026.08", (M, 14, WHITE)), ("ShiftsDeal", (MB, 18, WHITE)), ("Tech head. Payments, bookings, features shipped daily.", (M, 13.5, SOFT))],
-        [("2026.08", (M, 14, WHITE)), ("Masters' Union", (MB, 18, WHITE)), ("UG Data Science & AI, class of 2030.", (M, 13.5, SOFT))],
         [("2026.09", (M, 14, WHITE)), ("Bestow", (MB, 18, WHITE)), ("Freelance full-stack developer. Company websites with CMS admin panels.", (M, 13.5, SOFT))],
     ]
     body, H = terminal("git log --career", rows, 52, [28, 130, 360])
-    for i in (4, 5, 6):  # NOW tags
+    for i in (4, 5):  # NOW tags
         y = 62 + (i + 1) * 52 - 52 * .36
         body += (f'<g style="animation:rise .5s ease-out {1.2 + i * .18:.2f}s both"><rect x="1088" y="{y - 17:.0f}" width="70" height="24" rx="4" fill="{WHITE}"/>'
-                 + txt(MB, "NEW" if i == 5 else "NOW", 12, 1123, y, "#000", 1.5, "m")[0] + "</g>")
+                 + txt(MB, "NOW", 12, 1123, y, "#000", 1.5, "m")[0] + "</g>")
     return doc(1200, H, body, label="Career timeline")
 
 

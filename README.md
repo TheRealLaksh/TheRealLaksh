@@ -36,7 +36,7 @@
 
 <img src="assets/mono/h-path.svg" alt="Journey" width="100%">
 
-<img src="assets/mono/journey.svg" alt="Journey: Hotel Kavana, IIT Madras, MoreYeahs, Unified Mentor, ShiftsDeal, Masters' Union, Bestow" width="100%">
+<img src="assets/mono/journey.svg" alt="Journey: Hotel Kavana, IIT Madras, MoreYeahs, Unified Mentor, ShiftsDeal, Bestow" width="100%">
 
 <img src="assets/mono/h-stats.svg" alt="Statistics" width="100%">
 
