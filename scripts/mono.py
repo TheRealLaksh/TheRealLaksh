@@ -121,11 +121,13 @@ def hero():
     cw = M.width("M", size)
     x = (W - len(word) * cw) / 2
     clip, t, cur = typed("h", MB, x, 140, word, .8, .07, size, WHITE, WHITE, LOOP, keep_cursor=True)
-    roles = ["full-stack developer", "learning AI / ML", "tech head at ShiftsDeal", "10 m air pistol shooter"]
+    roles = ["full-stack developer", "freelance builder with Bestow", "tech head at ShiftsDeal", "learning AI / ML", "10 m air pistol shooter"]
+    cyc = 3 * len(roles)
+    kt = f"0;{.72 / cyc:.4f};{2.64 / cyc:.4f};{3.36 / cyc:.4f};1"  # same 3 s per role however many there are
     role_svg = "".join(
         f'<g opacity="0">{txt(M, "> " + role, 20, 600, 196, SOFT, 1.5, "m")[0]}'
-        f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.06;.22;.28;1" dur="12s" begin="{4.8 + 3 * k}s" repeatCount="indefinite"/>'
-        f'<animateTransform attributeName="transform" type="translate" values="0 8;0 0;0 0;0 -8;0 -8" keyTimes="0;.06;.22;.28;1" dur="12s" begin="{4.8 + 3 * k}s" repeatCount="indefinite"/></g>'
+        f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="{kt}" dur="{cyc}s" begin="{4.8 + 3 * k}s" repeatCount="indefinite"/>'
+        f'<animateTransform attributeName="transform" type="translate" values="0 8;0 0;0 0;0 -8;0 -8" keyTimes="{kt}" dur="{cyc}s" begin="{4.8 + 3 * k}s" repeatCount="indefinite"/></g>'
         for k, role in enumerate(roles))
     defs = (
         '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050506"/><stop offset=".4" stop-color="#202023"/><stop offset=".62" stop-color="#6c6c72"/><stop offset=".72" stop-color="#b6b6bb"/><stop offset="1" stop-color="#8a8a90"/></linearGradient>'
@@ -243,8 +245,8 @@ def about_art(size=400, wrap=True):
 def about():
     """Typed paragraph in a terminal card, with the globe beside it. One image, balanced height."""
     H, GW = 290, 290
-    text = ("Hello there! I'm Laksh Pradhwani, a full-stack developer. I like building complete products, from the database "
-            "all the way to the pixel, and I'm learning machine learning to steer towards AI engineering.")
+    text = ("Hello there! I'm Laksh Pradhwani, a full-stack developer and tech head at ShiftsDeal. I also build websites with "
+            "CMS admin panels for the Bestow agency, and I'm learning machine learning to steer towards AI engineering.")
     lines, cur = [], ""
     for w in text.split():
         if len(cur) + len(w) + 1 <= 62:
@@ -428,12 +430,13 @@ def journey():
         [("2025.10", (M, 14, DIM)), ("Unified Mentor", (MB, 18, WHITE)), ("Full-stack developer. Four production apps shipped.", (M, 13.5, GREY))],
         [("2026.08", (M, 14, WHITE)), ("ShiftsDeal", (MB, 18, WHITE)), ("Tech head. Payments, bookings, features shipped daily.", (M, 13.5, SOFT))],
         [("2026.08", (M, 14, WHITE)), ("Masters' Union", (MB, 18, WHITE)), ("UG Data Science & AI, class of 2030.", (M, 13.5, SOFT))],
+        [("2026.09", (M, 14, WHITE)), ("Bestow", (MB, 18, WHITE)), ("Freelance full-stack developer. Company websites with CMS admin panels.", (M, 13.5, SOFT))],
     ]
     body, H = terminal("git log --career", rows, 52, [28, 130, 360])
-    for i in (4, 5):  # NOW tags
+    for i in (4, 5, 6):  # NOW tags
         y = 62 + (i + 1) * 52 - 52 * .36
         body += (f'<g style="animation:rise .5s ease-out {1.2 + i * .18:.2f}s both"><rect x="1088" y="{y - 17:.0f}" width="70" height="24" rx="4" fill="{WHITE}"/>'
-                 + txt(MB, "NOW" if i == 4 else "NEW", 12, 1123, y, "#000", 1.5, "m")[0] + "</g>")
+                 + txt(MB, "NEW" if i == 5 else "NOW", 12, 1123, y, "#000", 1.5, "m")[0] + "</g>")
     return doc(1200, H, body, label="Career timeline")
 
 
