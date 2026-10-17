@@ -269,10 +269,10 @@ def about():
 
 # ---------------------------------------------------------------------------- tech badges
 TECH = [("html5", "HTML"), ("css", "CSS"), ("javascript", "JavaScript"), ("typescript", "TypeScript"), ("react", "React"), ("nextdotjs", "Next.js"),
-        ("tailwindcss", "Tailwind"), ("vite", "Vite"), ("threedotjs", "Three.js"), ("nodedotjs", "Node.js"), ("express", "Express"), ("python", "Python"),
+        ("tailwindcss", "Tailwind"), ("vite", "Vite"), ("threedotjs", "Three.js"), ("gsap", "GSAP"), ("framer", "Framer Motion"), ("nodedotjs", "Node.js"), ("express", "Express"), ("python", "Python"),
         ("django", "Django"), ("postgresql", "PostgreSQL"), ("prisma", "Prisma"), ("mysql", "MySQL"), ("mongodb", "MongoDB"), ("supabase", "Supabase"),
         ("firebase", "Firebase"), ("redis", "Redis"), ("numpy", "NumPy"), ("pandas", "Pandas"), ("scikitlearn", "scikit-learn"), ("googlegemini", "Gemini"),
-        ("claude", "Claude"), ("git", "Git"), ("github", "GitHub"), ("docker", "Docker"), ("vercel", "Vercel"), ("netlify", "Netlify"), ("figma", "Figma")]
+        ("claude", "Claude"), ("git", "Git"), ("github", "GitHub"), ("docker", "Docker"), ("vercel", "Vercel"), ("netlify", "Netlify"), ("razorpay", "Razorpay"), ("figma", "Figma")]
 
 
 def tech():

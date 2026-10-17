@@ -21,7 +21,7 @@
 
 <img src="assets/mono/h-tech.svg" alt="Technologies" width="100%">
 
-<img src="assets/mono/tech.svg" alt="Technologies: HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, Python, Django, PostgreSQL, Firebase, Git and more" width="100%">
+<img src="assets/mono/tech.svg" alt="Technologies: HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, Python, Django, PostgreSQL, Firebase, GSAP, Razorpay, Git and more" width="100%">
 
 <img src="assets/mono/h-work.svg" alt="Projects" width="100%">
 
