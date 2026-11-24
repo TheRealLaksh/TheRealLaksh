@@ -26,7 +26,7 @@
 <img src="assets/mono/h-work.svg" alt="Projects" width="100%">
 
 <!-- projects:start -->
-<a href="https://github.com/TheRealLaksh/Profiley-Resume-Builder" title="Open Profiley-Resume-Builder on GitHub (0 stars)"><img src="assets/mono/card-01.svg" alt="Profiley-Resume-Builder: Reactive resume builder with real-time WYSIWYG editing and 10+ templates." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/ResumeDeck" title="Open ResumeDeck on GitHub (0 stars)"><img src="assets/mono/card-01.svg" alt="ResumeDeck: Free ATS resume builder for students and freshers: live preview, ATS check, text PDF and share links." width="49%"></a>
 <a href="https://github.com/TheRealLaksh/mp3-downloader" title="Open mp3-downloader on GitHub (0 stars)"><img src="assets/mono/card-02.svg" alt="mp3-downloader: Desktop playlist downloader: fetches a YouTube Music playlist's metadata and saves each track as a high-quality MP3." width="49%"></a>
 <a href="https://github.com/TheRealLaksh/mercatora" title="Open mercatora on GitHub (0 stars)"><img src="assets/mono/card-03.svg" alt="mercatora: Mall management system with a secure admin dashboard for shops and listings." width="49%"></a>
 <a href="https://github.com/TheRealLaksh/Helios-Music-Player" title="Open Helios-Music-Player on GitHub (1 stars)"><img src="assets/mono/card-04.svg" alt="Helios-Music-Player: Lightweight music player with smooth audio controls and an animated, responsive UI." width="49%"></a>
