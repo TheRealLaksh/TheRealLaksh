@@ -26,14 +26,19 @@
 <img src="assets/mono/h-work.svg" alt="Projects" width="100%">
 
 <!-- projects:start -->
-<a href="https://github.com/TheRealLaksh/ResumeDeck" title="Open ResumeDeck on GitHub (0 stars)"><img src="assets/mono/card-01.svg" alt="ResumeDeck: Free ATS resume builder for students and freshers: live preview, ATS check, text PDF and share links." width="49%"></a>
-<a href="https://github.com/TheRealLaksh/mp3-downloader" title="Open mp3-downloader on GitHub (0 stars)"><img src="assets/mono/card-02.svg" alt="mp3-downloader: Desktop playlist downloader: fetches a YouTube Music playlist's metadata and saves each track as a high-quality MP3." width="49%"></a>
-<a href="https://github.com/TheRealLaksh/mercatora" title="Open mercatora on GitHub (0 stars)"><img src="assets/mono/card-03.svg" alt="mercatora: Mall management system with a secure admin dashboard for shops and listings." width="49%"></a>
-<a href="https://github.com/TheRealLaksh/Helios-Music-Player" title="Open Helios-Music-Player on GitHub (1 stars)"><img src="assets/mono/card-04.svg" alt="Helios-Music-Player: Lightweight music player with smooth audio controls and an animated, responsive UI." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Portfolio-V1" title="Open Portfolio-V1 on GitHub (0 stars)"><img src="assets/mono/card-01.svg" alt="Portfolio-V1: My live portfolio: scroll-driven motion, Three.js scenes, a /hire page and an AI chat assistant." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/ResumeDeck" title="Open ResumeDeck on GitHub (0 stars)"><img src="assets/mono/card-02.svg" alt="ResumeDeck: Free ATS resume builder (ex-Profiley): live preview, ATS check, text PDF and share links." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/namma-space-r1" title="Open namma-space-r1 on GitHub (0 stars)"><img src="assets/mono/card-03.svg" alt="namma-space-r1: Techfest IIT Bombay 2026, Round 1: turns a phone video into a walkable 3D web twin." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/fetchathon-3-agent" title="Open fetchathon-3-agent on GitHub (0 stars)"><img src="assets/mono/card-04.svg" alt="fetchathon-3-agent: Fetch-A-Thon 3.0 entry: an AI agent on Agentverse, reachable through ASI:One." width="49%"></a>
 <a href="https://github.com/TheRealLaksh/Vaultara-GovDoc" title="Open Vaultara-GovDoc on GitHub (0 stars)"><img src="assets/mono/card-05.svg" alt="Vaultara-GovDoc: Privacy-first gov-tech platform to securely store, manage and share citizen documents." width="49%"></a>
-<a href="https://github.com/TheRealLaksh/Callender-Events" title="Open Callender-Events on GitHub (1 stars)"><img src="assets/mono/card-06.svg" alt="Callender-Events: CaliBridge: event calendar with month switching, local sync and a responsive animated UI." width="49%"></a>
-<a href="https://github.com/TheRealLaksh/stranger-things" title="Open stranger-things on GitHub (1 stars)"><img src="assets/mono/card-07.svg" alt="stranger-things: Cinematic fan site with GSAP parallax, a Hawkins Lab archive and a theory board." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Helios-Music-Player" title="Open Helios-Music-Player on GitHub (1 stars)"><img src="assets/mono/card-06.svg" alt="Helios-Music-Player: Lightweight music player with smooth audio controls and an animated, responsive UI." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/Callender-Events" title="Open Callender-Events on GitHub (1 stars)"><img src="assets/mono/card-07.svg" alt="Callender-Events: CaliBridge: event calendar with month switching, local sync and a responsive animated UI." width="49%"></a>
+<a href="https://github.com/TheRealLaksh/mercatora" title="Open mercatora on GitHub (0 stars)"><img src="assets/mono/card-08.svg" alt="mercatora: Mall management system with a secure admin dashboard for shops and listings." width="49%"></a>
 <!-- projects:end -->
+
+<img src="assets/mono/h-now.svg" alt="Now" width="100%">
+
+<img src="assets/mono/now.svg" alt="Now: ShiftsDeal, Bestow, ResumeDeck, QR Art, Techfest IIT Bombay, Raspberry Pi lab" width="100%">
 
 <img src="assets/mono/h-path.svg" alt="Journey" width="100%">
 

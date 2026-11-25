@@ -121,7 +121,7 @@ def hero():
     cw = M.width("M", size)
     x = (W - len(word) * cw) / 2
     clip, t, cur = typed("h", MB, x, 140, word, .8, .07, size, WHITE, WHITE, LOOP, keep_cursor=True)
-    roles = ["full-stack developer", "freelance builder with Bestow", "tech head at ShiftsDeal", "learning AI / ML", "10 m air pistol shooter"]
+    roles = ["full-stack developer", "freelance builder with Bestow", "tech head at ShiftsDeal", "building ResumeDeck", "learning AI / ML", "10 m air pistol shooter"]
     cyc = 3 * len(roles)
     kt = f"0;{.72 / cyc:.4f};{2.64 / cyc:.4f};{3.36 / cyc:.4f};1"  # same 3 s per role however many there are
     role_svg = "".join(
@@ -172,6 +172,7 @@ ICO = {
     "path": '<circle cx="5" cy="6" r="2"/><circle cx="17" cy="16" r="2"/><path d="M7 7c8 0 2 8 8 8"/>',
     "wins": '<path d="M11 3l2.4 5 5.4.7-4 3.8 1 5.4-4.8-2.7-4.8 2.7 1-5.4-4-3.8 5.4-.7z"/>',
     "stats": '<path d="M4 18V9M10 18V4M16 18v-6"/>',
+    "now": '<circle cx="11" cy="11" r="8"/><path d="M11 6v5l3.5 2"/>',
     "connect": '<rect x="2" y="5" width="18" height="13" rx="2"/><path d="M2 7l9 6 9-6"/>',
 }
 
@@ -245,8 +246,9 @@ def about_art(size=400, wrap=True):
 def about():
     """Typed paragraph in a terminal card, with the globe beside it. One image, balanced height."""
     H, GW = 290, 290
-    text = ("Hello there! I'm Laksh Pradhwani, a full-stack developer and tech head at ShiftsDeal. I also build websites with "
-            "CMS admin panels for the Bestow agency, and I'm learning machine learning to steer towards AI engineering.")
+    text = ("Hello there! I'm Laksh Pradhwani, a full-stack developer and tech head at ShiftsDeal. I build company websites with "
+            "CMS admin panels as a freelancer, ship my own products like ResumeDeck, and I'm studying data science and AI "
+            "to steer towards ML engineering.")
     lines, cur = [], ""
     for w in text.split():
         if len(cur) + len(w) + 1 <= 62:
@@ -439,6 +441,19 @@ def journey():
     return doc(1200, H, body, label="Career timeline")
 
 
+def now():
+    rows = [
+        [("shiftsdeal", (MB, 18, WHITE)), ("Tech head. Venue-booking platform, Razorpay payments, features shipped daily.", (M, 13.5, SOFT))],
+        [("bestow", (MB, 18, WHITE)), ("Freelance full-stack. Company websites with CMS admin panels, handed over as code.", (M, 13.5, SOFT))],
+        [("resumedeck", (MB, 18, WHITE)), ("Free ATS resume builder, renamed from Profiley on 25 Nov. Live at resumedeck.lakshpradhwani.com.", (M, 13.5, SOFT))],
+        [("qr-art", (MB, 18, WHITE)), ("Browser-only tool that blends a picture into a scannable QR code. Live at qrart.lakshpradhwani.com.", (M, 13.5, SOFT))],
+        [("techfest", (MB, 18, WHITE)), ("IIT Bombay 2026: Wrecking Ball robot finalist (finals 16-17 Dec) and Namma Space, a 3D web twin.", (M, 13.5, SOFT))],
+        [("pi-lab", (MB, 18, WHITE)), ("Raspberry Pi lab: learning embedded vision and robotics hands-on.", (M, 13.5, SOFT))],
+    ]
+    body, H = terminal("git status --now", rows, 52, [28, 190])
+    return doc(1200, H, body, label="What I am working on now")
+
+
 def wins():
     rows = [
         [("AIR 54", (MB, 22, WHITE)), ("All-India rank in 10 m air pistol, U-17 Nationals. State rank 34.", (M, 14, GREY))],
@@ -596,13 +611,14 @@ def main():
     save("badge-email.svg", badge("EMAIL", "gmail"))
     save("badge-instagram.svg", badge("INSTAGRAM", "instagram"))
     save("badge-website.svg", badge("WEBSITE", None, "www"))
-    for icon, title, name in [("about", "About me", "h-about"), ("tech", "Technologies", "h-tech"), ("work", "Projects", "h-work"), ("path", "Journey", "h-path"),
+    for icon, title, name in [("about", "About me", "h-about"), ("tech", "Technologies", "h-tech"), ("work", "Projects", "h-work"), ("now", "Now", "h-now"), ("path", "Journey", "h-path"),
                               ("stats", "Statistics", "h-stats"), ("connect", "Let's connect", "h-connect")]:
         save(name + ".svg", heading(icon, title))
     save("about-art.svg", about_art())
     save("about.svg", about())
     save("tech.svg", tech())
     save("journey.svg", journey())
+    save("now.svg", now())
     save("footer.svg", footer())
     print("mono assets built")
 
